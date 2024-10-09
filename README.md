@@ -26,19 +26,32 @@ This patch is currently known to fix the following games on Linux when ran with 
 
 The patch needs to be compiled with a Windows C99 compatible compiler, which can be done on Linux using a cross-compiler like [MinGW](https://www.mingw-w64.org).
 
+### 1. Clone and enter the repository
+
 ```sh
 git clone https://github.com/axertheaxe/unitymain-patch.git
 cd unitymain-patch
-x86_64-w64-mingw32-gcc -municode patch.c -o patch.exe
 ```
 
-Nix users can make use of the included flake.nix as a development shell to automatically obtain MinGW for compilation, and Wine for debugging.
+### 2. Compile with a cross-compiler like MinGW
 
 ```sh
-git clone https://github.com/axertheaxe/unitymain-patch.git
-cd unitymain-patch
+mkdir -p build && x86_64-w64-mingw32-gcc src/patch.c -municode -o build/patch.exe
+# or build automatically with make
+make
+```
+
+The resulting `patch.exe` will be in the `build` directory.
+
+### Nix
+
+Nix users can make use of the included flake.nix as a development shell to automatically obtain MinGW and Make for compilation alongside Wine64 for debugging.
+
+```sh
 nix develop
-x86_64-w64-mingw32-gcc -municode patch.c -o patch.exe
+make
+# For debugging
+wine64 build/patch.exe
 ```
 
 ## Contributing
