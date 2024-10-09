@@ -21,6 +21,7 @@
                             printf '%s' ' -I${pkgs.pkgsCross.mingwW64.windows.mcfgthreads.dev}/include' >> $out/nix-support/cc-cflags
                         '';
                     }))
+                    pkgs.gnumake
                 ];
             };
         };
