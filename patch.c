@@ -4,6 +4,8 @@
 #define UNITY_DLL "UnityPlayer.dll"
 #define UNITY_MAIN "UnityMain"
 
+#define eprintln(msg, ...) fprintf(stderr, msg"\n", ##__VA_ARGS__)
+
 typedef int (*UnityFuncPtr)(HINSTANCE, HINSTANCE, LPWSTR, int);
 
 int WINAPI wWinMain(const HINSTANCE hInstance, const HINSTANCE hPrevInstance, const LPWSTR lpCmdLine, const int nCmdShow) {
@@ -12,11 +14,11 @@ int WINAPI wWinMain(const HINSTANCE hInstance, const HINSTANCE hPrevInstance, co
         const DWORD error = GetLastError();
         
         if (error == ERROR_MOD_NOT_FOUND) {
-            fprintf(stderr, "Could not find '%s'.\n", UNITY_DLL);
+            eprintln("Could not find '%s'.", UNITY_DLL);
         } else if (error == ERROR_BAD_EXE_FORMAT) {
-            fprintf(stderr, "'%s' is not a valid DLL.\n", UNITY_DLL);
+            eprintln("'%s' is not a valid DLL.", UNITY_DLL);
         } else {
-            fprintf(stderr, "Failed to load '%s'. Error code '%lu'.\n", UNITY_DLL, error);
+            eprintln("Failed to load '%s'. Error code '%lu'.", UNITY_DLL, error);
         }
 
         return EXIT_FAILURE;
@@ -24,7 +26,7 @@ int WINAPI wWinMain(const HINSTANCE hInstance, const HINSTANCE hPrevInstance, co
 
     UnityFuncPtr UnityMain = (UnityFuncPtr)GetProcAddress(unityDll, UNITY_MAIN);
     if (!UnityMain) {
-        fprintf(stderr, "Could not get the process address of '%ls'.\n", UNITY_MAIN);
+        eprintln("Could not get the process address of '%ls'.", UNITY_MAIN);
         return EXIT_FAILURE;
     }
 
