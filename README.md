@@ -32,7 +32,7 @@ cd unitymain-patch
 x86_64-w64-mingw32-gcc -municode patch.c -o patch.exe
 ```
 
-Nix users can make use of the included flake.nix as a development shell to automatically obtain all dependencies.
+Nix users can make use of the included flake.nix as a development shell to automatically obtain MinGW for compilation, and Wine for debugging.
 
 ```sh
 git clone https://github.com/axertheaxe/unitymain-patch.git
