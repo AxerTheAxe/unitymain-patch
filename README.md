@@ -15,8 +15,8 @@ This patch is currently known to fix the following games on Linux when ran with 
 
 ## Installation
 
-1. Download the `patch.exe` from the [releases](https://github.com/axertheaxe/unitymain-patch/releases) or [compile from source](#Compilation).
-2. Move the downloaded `patch.exe` to the location of the games executable.
+1. Download the `patch.exe` from [releases](https://github.com/axertheaxe/unitymain-patch/releases) or [compile from source](#Compilation).
+2. Move the `patch.exe` to the location of the games executable.
 3. Delete or rename the games executable.
 4. Rename `patch.exe` to the original name of the games executable.
 
