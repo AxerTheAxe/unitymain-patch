@@ -1,6 +1,6 @@
 # UnityMain Patch
 
-Executable to patch some Windows targeted Unity games that fail to call the UnityMain function when ran on Linux using Wine / Proton.
+Executable to patch some Windows targeted Unity games that fail to call the UnityMain function when run on Linux using Wine / Proton.
 
 Please note that this patch is not guaranteed to fix any Unity game on Proton / Wine. Other issues may require different fixes.
 
