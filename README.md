@@ -24,7 +24,7 @@ This patch is currently known to fix the following games on Linux when ran with 
 
 ## Compilation
 
-The patch needs to be compiled with a Windows C compiler, which can be done on Linux using a cross-compiler like [MinGW](https://www.mingw-w64.org).
+The patch needs to be compiled with a Windows C99 compatible compiler, which can be done on Linux using a cross-compiler like [MinGW](https://www.mingw-w64.org).
 
 ```sh
 git clone https://github.com/axertheaxe/unitymain-patch.git
