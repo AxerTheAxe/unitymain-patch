@@ -13,13 +13,17 @@ int WINAPI wWinMain(const HINSTANCE hInstance, const HINSTANCE hPrevInstance, co
     if (!unityDll) {
         const DWORD error = GetLastError();
         
-        if (error == ERROR_MOD_NOT_FOUND) {
-            eprintln("Could not find '%s'.", UNITY_DLL);
-        } else if (error == ERROR_BAD_EXE_FORMAT) {
-            eprintln("'%s' is not a valid DLL.", UNITY_DLL);
-        } else {
-            eprintln("Failed to load '%s'. Error code '%lu'.", UNITY_DLL, error);
-        }
+        switch (error) {
+            case ERROR_MOD_NOT_FOUND:
+                eprintln("Could not find '%s'.", UNITY_DLL);
+                break;
+            case ERROR_BAD_EXE_FORMAT:
+                eprintln("'%s' is not a valid DLL.", UNITY_DLL);
+                break;
+            default:
+                eprintln("Failed to load '%s'. Error code '%lu'.", UNITY_DLL, error);
+                break;
+        };
 
         return EXIT_FAILURE;
     }
