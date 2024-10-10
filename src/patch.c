@@ -26,7 +26,7 @@ int WINAPI wWinMain(const HINSTANCE hInstance, const HINSTANCE hPrevInstance, co
 
     UnityFuncPtr UnityMain = (UnityFuncPtr)GetProcAddress(unityDll, UNITY_MAIN);
     if (!UnityMain) {
-        eprintln("Could not get the process address of '%ls'.", UNITY_MAIN);
+        eprintln("Could not get the process address of '%s'.", UNITY_MAIN);
         return EXIT_FAILURE;
     }
 
