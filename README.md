@@ -4,7 +4,7 @@ Executable to patch some Windows targeted Unity games that fail to call the Unit
 
 Please note that this patch is not guaranteed to fix any Unity game on Proton / Wine. Other issues may require different fixes.
 
-The original concept for this patch can be found [here](https://notabug.org/Krock/dawn/issues/454).
+**The original concept and implementation for this patch can be found [here](https://notabug.org/Krock/dawn/issues/454).**
 
 ## Games
 
