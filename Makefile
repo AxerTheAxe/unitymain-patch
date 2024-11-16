@@ -1,5 +1,5 @@
 CC := x86_64-w64-mingw32-gcc
-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -municode
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -Wno-cast-function-type -municode
 
 SRC := src/patch.c
 TARGET := build/patch.exe
