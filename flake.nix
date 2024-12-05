@@ -16,8 +16,9 @@
                 with pkgs;
                 mkShell.override { stdenv = pkgsCross.mingwW64.stdenv; } {
                     nativeBuildInputs = [
-                        wine64
                         bear
+                        clang-tools
+                        wine64
                     ];
                 };
         };
