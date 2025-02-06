@@ -11,7 +11,7 @@ Please note that this patch is not guaranteed to fix any Unity game on Proton / 
 This patch is currently known to fix the following games on Linux when ran with Proton / Wine.
 
 * Punishing: Gray Raven
-* Reverse: 1999
+* Reverse: 1999 (no longer requires this patch after recent Steam update)
 
 ## Installation
 
