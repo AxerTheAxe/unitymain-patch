@@ -2,7 +2,7 @@
     description = "Flake to source development environment with Nix.";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+        nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
     };
 
     outputs =
@@ -12,14 +12,16 @@
             pkgs = import nixpkgs { localSystem = system; };
         in
         {
-            devShells.${system}.default =
-                with pkgs;
-                mkShell.override { stdenv = pkgsCross.mingwW64.stdenv; } {
-                    nativeBuildInputs = [
-                        bear
-                        clang-tools
-                        wine64
-                    ];
-                };
+            devShells.${system}.default = pkgs.mkShell {
+                buildInputs = [
+                    pkgs.wine64
+                ];
+
+                nativeBuildInputs = [
+                    pkgs.bear
+                    pkgs.pkgsCross.mingwW64.buildPackages.clang-tools
+                    pkgs.pkgsCross.mingwW64.buildPackages.gcc
+                ];
+            };
         };
 }
