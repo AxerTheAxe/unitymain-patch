@@ -1,18 +1,19 @@
-CC := x86_64-w64-mingw32-gcc
-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -Wno-cast-function-type -municode
+CC := x86_64-w64-mingw32-cc
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -municode
 
+BUILD_DIR := build
 SRC := src/patch.c
-TARGET := build/patch.exe
+TARGET := $(BUILD_DIR)/patch.exe
 
-$(TARGET): $(SRC) | build
+all: $(TARGET)
 
-build:
-	mkdir -p build
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
 
-$(TARGET): $(SRC)
+$(TARGET): $(BUILD_DIR) $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean: 
-	rm -rf build
+	rm -rf $(BUILD_DIR)
 
-.PHONY: all clean build
+.PHONY: all clean
