@@ -1,5 +1,5 @@
 CC := x86_64-w64-mingw32-cc
-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -municode
+CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -municode -march=native -Os
 
 BUILD_DIR := build
 SRC := src/patch.c
