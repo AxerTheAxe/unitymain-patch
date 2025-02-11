@@ -15,7 +15,7 @@ static inline void logBasic(
 }
 
 static void logMessage(const char* const message, ...) {
-    va_list arguments = NULL;
+    va_list arguments;
     va_start(arguments, message);
 
     logBasic(stdout, "unitymain-patch: ", message, arguments);
@@ -24,7 +24,7 @@ static void logMessage(const char* const message, ...) {
 }
 
 static void logError(const char* const message, ...) {
-    va_list arguments = NULL;
+    va_list arguments;
     va_start(arguments, message);
 
     logBasic(stderr, "error: ", message, arguments);
