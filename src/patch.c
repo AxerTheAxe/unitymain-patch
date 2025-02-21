@@ -10,7 +10,7 @@ static inline void logBasic(
     FILE* const outputFile, const char* const prefix, const char* const message,
     const va_list arguments
 ) {
-    fprintf(outputFile, "%s", prefix);
+    fputs(prefix, outputFile);
     vfprintf(outputFile, message, arguments);
 }
 
