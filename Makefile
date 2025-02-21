@@ -1,4 +1,4 @@
-CC := x86_64-w64-mingw32-cc
+CC := x86_64-w64-mingw32-gcc
 CFLAGS := -std=c99 -pedantic -Wall -Wextra -Werror -municode -march=native -Os
 
 BUILD_DIR := build
