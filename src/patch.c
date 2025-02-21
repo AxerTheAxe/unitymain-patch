@@ -11,27 +11,27 @@
 typedef int (*UnityMain)(HINSTANCE, HINSTANCE, LPWSTR, int);
 
 static inline void logBasic(
-    FILE* const outputFile, const char* const prefix, const char* const message,
+    FILE* const outputFile, const char* const prefix, const char* const format,
     const va_list arguments
 ) {
     fputs(prefix, outputFile);
-    vfprintf(outputFile, message, arguments);
+    vfprintf(outputFile, format, arguments);
 }
 
-static void logMessage(const char* const message, ...) {
+static void logMessage(const char* const format, ...) {
     va_list arguments;
-    va_start(arguments, message);
+    va_start(arguments, format);
 
-    logBasic(stdout, "unitymain-patch: ", message, arguments);
+    logBasic(stdout, "unitymain-patch: ", format, arguments);
 
     va_end(arguments);
 }
 
-static void logError(const char* const message, ...) {
+static void logError(const char* const format, ...) {
     va_list arguments;
-    va_start(arguments, message);
+    va_start(arguments, format);
 
-    logBasic(stderr, "error: ", message, arguments);
+    logBasic(stderr, "error: ", format, arguments);
 
     va_end(arguments);
 }
