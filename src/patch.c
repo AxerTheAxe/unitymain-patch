@@ -4,6 +4,10 @@
 #define UNITY_PLAYER "UnityPlayer.dll"
 #define UNITY_MAIN "UnityMain"
 
+// Function pointer type to match the signature of UnityMain,
+// the function used by Unity to initialize an application.
+// The signature is as defined here:
+// https://docs.unity3d.com/6000.0/Documentation/Manual/UnityasaLibrary-Windows.html
 typedef int (*UnityMain)(HINSTANCE, HINSTANCE, LPWSTR, int);
 
 static inline void logBasic(
