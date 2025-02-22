@@ -6,13 +6,6 @@ Please note that this patch is not guaranteed to fix any Unity game on Proton / 
 
 **The original concept and implementation for this patch can be found [here](https://notabug.org/Krock/dawn/issues/454).**
 
-## Games
-
-This patch is currently known to fix the following games on Linux when ran with Proton / Wine.
-
-* Punishing: Gray Raven
-* Reverse: 1999 (no longer requires this patch after recent Steam update)
-
 ## Installation
 
 1. Download the `patch.exe` from [releases](https://github.com/axertheaxe/unitymain-patch/releases) or [compile from source](#Compilation).
@@ -56,7 +49,7 @@ wine64 build/patch.exe
 
 ## Contributing
 
-Whether you have code to submit or want to add a game to the list of known fixes, feel free to [open an issue](https://github.com/axertheaxe/unitymain-patch/issues/new)
+Whether you have code to submit or find an issue, [open an issue](https://github.com/axertheaxe/unitymain-patch/issues/new)
 or [submit a pull request](https://github.com/axertheaxe/unitymain-patch/compare).
 
 ## Unlicense
